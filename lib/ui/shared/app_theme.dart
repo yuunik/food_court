@@ -11,9 +11,11 @@ class AppTheme {
   // 正常模式的主题配置
   static const Color normalColor = Colors.pink;
   static final ThemeData normalTheme = ThemeData(
+    useMaterial3: true,
     colorScheme: ColorScheme.fromSeed(
-      seedColor: Colors.blue
+      seedColor: Colors.blueAccent
     ),
+    canvasColor: const Color.fromRGBO(255, 254, 222, 1),
     textTheme: const TextTheme(
       bodyMedium: TextStyle(
         fontSize: bodyTextSize

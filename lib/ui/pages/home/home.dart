@@ -12,8 +12,9 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("首页"),
         centerTitle: true,
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary
+        backgroundColor: Theme.of(context).colorScheme.primary,
       ),
+      backgroundColor: Theme.of(context).canvasColor,
       body: const Center(
         child: Text("首页"),
       )
