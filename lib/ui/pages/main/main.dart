@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_court/ui/pages/main/initalize_items.dart';
+import 'package:food_court/ui/shared/app_theme.dart';
 
 class MainConfig extends StatefulWidget {
   // 路由名称
@@ -23,6 +24,8 @@ class _MainConfigState extends State<MainConfig> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
+        selectedFontSize: AppTheme.bottomNavigationBarTextSize,
+        unselectedFontSize: AppTheme.bottomNavigationBarTextSize,
         items: bottomNavigationBarItemList,
         onTap: (index) => setState(() {
           _currentIndex = index;

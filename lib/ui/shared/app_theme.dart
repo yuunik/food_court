@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class AppTheme {
   // 文本大小配置
   static const double bodyTextSize = 14;
+  static const double bottomNavigationBarTextSize = 14;
   static const double smallTextSize = 16;
   static const double normalTextSize = 20;
   static const double largeTextSize = 24;
