@@ -17,6 +17,8 @@ class AppTheme {
       seedColor: Colors.blueAccent
     ),
     canvasColor: const Color.fromRGBO(255, 254, 222, 1),
+    splashColor: Colors.transparent,
+    highlightColor: Colors.transparent,
     textTheme: const TextTheme(
       bodyMedium: TextStyle(
         fontSize: bodyTextSize
