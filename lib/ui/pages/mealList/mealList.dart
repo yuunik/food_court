@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_court/core/model/category_model.dart';
+import 'package:food_court/core/service/meal_request.dart';
 
 class MealList extends StatelessWidget {
   static const String routeName = "/mealList";

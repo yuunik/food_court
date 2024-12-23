@@ -1,5 +1,5 @@
 class HttpConfig {
-  static const String baseUrl = "http://localhost";
+  static const String baseUrl = "http://10.0.2.2:1997/api";
 
   static const int connectTimeout = 5;
 

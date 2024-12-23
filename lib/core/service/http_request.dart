@@ -12,7 +12,7 @@ class HttpRequest {
 
   static final Dio _dio = Dio(_baseOptions);
 
-  static Future<Response<T>> send<T>(String url, {String method = "get", Map<String, dynamic>? queryParams, Interceptor? interceptor}) async {
+  static Future<T> send<T>(String url, {String method = "get", Map<String, dynamic>? queryParams, Interceptor? interceptor}) async {
     // 配置单独的配置
     final options = Options(method: method);
 
