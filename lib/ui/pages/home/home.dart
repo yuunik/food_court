@@ -10,6 +10,19 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const HomeContent();
+    return Scaffold(
+        appBar: AppBar(
+          title: const Text("Food Court"),
+          centerTitle: true,
+          backgroundColor: Theme
+              .of(context)
+              .colorScheme
+              .primary,
+        ),
+        backgroundColor: Theme
+            .of(context)
+            .canvasColor,
+        body: const HomeContent()
+    );
   }
 }

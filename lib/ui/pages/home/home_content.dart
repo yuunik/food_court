@@ -11,14 +11,7 @@ class HomeContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: const Text("Food Court"),
-          centerTitle: true,
-          backgroundColor: Theme.of(context).colorScheme.primary,
-        ),
-        backgroundColor: Theme.of(context).canvasColor,
-        body: FutureBuilder<List<CategoryModel>>(
+    return FutureBuilder<List<CategoryModel>>(
           future: JsonParse.getCategoryList(),
           builder: (context, snapshot) {
             // 没有数据, 显示加载中
@@ -65,8 +58,7 @@ class HomeContent extends StatelessWidget {
               },
             );
           },
-        )
-    );
+        );
   }
 }
 

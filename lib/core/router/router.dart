@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:food_court/ui/pages/main/main.dart';
+import 'package:food_court/ui/pages/mealList/mealList.dart';
 
 class AppRouter {
   // 默认路由
@@ -7,7 +8,8 @@ class AppRouter {
 
   // 路由表
   static final Map<String, WidgetBuilder> routes = {
-    MainConfig.routeName: (context) => const MainConfig()
+    MainConfig.routeName: (context) => const MainConfig(),
+    MealList.routeName: (context) => const MealList(),
   };
 
   // 生成路由
