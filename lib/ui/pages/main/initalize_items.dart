@@ -11,11 +11,11 @@ List<Widget> pageList = <Widget>[
 // 底部导航栏配置
 List<BottomNavigationBarItem> bottomNavigationBarItemList = const <BottomNavigationBarItem>[
   BottomNavigationBarItem(
-    label: "首页",
+    label: "Homepage",
     icon: Icon(Icons.home)
   ),
   BottomNavigationBarItem(
-    label: "我的收藏",
+    label: "Favorite",
     icon: Icon(Icons.favorite)
   )
 ];
