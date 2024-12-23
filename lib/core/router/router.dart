@@ -11,8 +11,12 @@ class AppRouter {
   };
 
   // 生成路由
-  static RouteFactory? generateRoute = (settings) {};
+  static RouteFactory? generateRoute = (settings) {
+    return null;
+  };
 
   // 任意路由
-  static RouteFactory? unknownRoute = (settings) {};
+  static RouteFactory? unknownRoute = (settings) {
+    return null;
+  };
 }

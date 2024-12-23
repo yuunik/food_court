@@ -24,13 +24,16 @@ class AppTheme {
         fontSize: bodyTextSize
       ),
       displaySmall: TextStyle(
-        fontSize: smallTextSize
+        fontSize: smallTextSize,
+        color: Colors.black87
       ),
       displayMedium: TextStyle(
-        fontSize: normalTextSize
+        fontSize: normalTextSize,
+        color: Colors.black87
       ),
       displayLarge: TextStyle(
-        fontSize: largeTextSize
+        fontSize: largeTextSize,
+        color: Colors.black87
       )
     )
   );
