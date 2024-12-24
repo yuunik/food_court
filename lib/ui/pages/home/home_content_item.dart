@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:food_court/core/extension/int_fit.dart';
 import 'package:food_court/core/model/category_model.dart';
-import 'package:food_court/ui/pages/mealList/mealList.dart';
+import 'package:food_court/ui/pages/mealList/meal_list.dart';
 
 class HomeContentItem extends StatelessWidget {
   final CategoryModel _categoryModel;

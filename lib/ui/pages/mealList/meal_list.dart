@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'package:food_court/core/model/category_model.dart';
-import 'package:food_court/core/service/meal_request.dart';
+import 'package:food_court/ui/pages/mealList/meal_list_content.dart';
 
 class MealList extends StatelessWidget {
   static const String routeName = "/mealList";
@@ -19,11 +20,7 @@ class MealList extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.primary,
       ),
       backgroundColor: Theme.of(context).canvasColor,
-      body: Center(
-        child: Text(
-          "Good"
-        ),
-      )
+      body: const MealListContent()
     );
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:food_court/ui/pages/main/main.dart';
-import 'package:food_court/ui/pages/mealList/mealList.dart';
+import 'package:food_court/ui/pages/mealList/meal_list.dart';
 
 class AppRouter {
   // 默认路由

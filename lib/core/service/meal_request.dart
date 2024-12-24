@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:food_court/core/model/meal_model.dart';
 import 'package:food_court/core/service/http_request.dart';
 
@@ -9,7 +7,7 @@ class MealRequest {
     final dataList = res['meal'];
     List<MealModel> mealList = [];
     for(var data in dataList) {
-      mealList.add(json.decode(data));
+      mealList.add(MealModel.fromJson(data));
     }
     return mealList;
   }

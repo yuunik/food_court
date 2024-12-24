@@ -14,4 +14,6 @@ class MealViewModel extends ChangeNotifier {
     _mealList = res;
     notifyListeners();
   }
+
+  List<MealModel> get mealList => _mealList;
 }
