@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_court/core/model/category_model.dart';
 import 'package:food_court/core/model/meal_model.dart';
 import 'package:food_court/core/viewmodel/meal_view_model.dart';
+import 'package:food_court/ui/widgets/meal_card.dart';
 import 'package:provider/provider.dart';
 import 'package:collection/collection.dart';
 
@@ -16,7 +17,10 @@ class MealListContent extends StatelessWidget {
       shouldRebuild: (previous, next) => !const ListEquality().equals(previous, next),
       builder: (context, mealModelList, child) => ListView.builder(
         itemCount: mealModelList.length,
-        itemBuilder: (context, index) => Text(mealModelList[index].title),
+        itemBuilder: (context, index) => Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 5.0),
+          child: MealCard(mealModelList[index])
+        )
       ),
       selector: (context, mealViewModel) => mealViewModel.mealList.where((meal) => meal.categories.contains(category.id)).toList(),
     );

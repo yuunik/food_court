@@ -4,12 +4,16 @@ List<MealModel> mealModelFromJson(String str) => List<MealModel>.from(json.decod
 
 String mealModelToJson(List<MealModel> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
+// 操作难度
+List<String> complexityArr = ["简单", "一般", "困难"];
+
 class MealModel {
   String id;
   List<String> categories;
   String title;
   int affordability;
   int complexity;
+  String? complexityStr;
   String imageUrl;
   int duration;
   List<String> ingredients;
@@ -25,6 +29,7 @@ class MealModel {
     required this.title,
     required this.affordability,
     required this.complexity,
+    this.complexityStr,
     required this.imageUrl,
     required this.duration,
     required this.ingredients,
@@ -41,6 +46,7 @@ class MealModel {
     title: json["title"],
     affordability: json["affordability"],
     complexity: json["complexity"],
+    complexityStr: complexityArr[json["complexity"]],
     imageUrl: json["imageUrl"],
     duration: json["duration"],
     ingredients: List<String>.from(json["ingredients"].map((x) => x)),
