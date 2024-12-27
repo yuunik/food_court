@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:food_court/core/extension/double_fit.dart';
 
 import 'package:food_court/core/model/meal_model.dart';
 import 'package:food_court/core/extension/int_fit.dart';
+import 'package:food_court/ui/pages/detail/detail.dart';
 import 'package:food_court/ui/widgets/meal_operation_item.dart';
 
 final cardRadius = 12.px;
@@ -19,11 +19,16 @@ class MealCard extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12.0)
       ),
-      child: Column(
-        children: [
-          buildImageInfo(context),
-          buildMealInfo()
-        ],
+      child: GestureDetector(
+        onTap: () {
+          Navigator.of(context).pushNamed(MealDetail.routeName, arguments: _mealInfo);
+        },
+        child: Column(
+          children: [
+            buildImageInfo(context),
+            buildMealInfo()
+          ],
+        ),
       ),
     );
   }
@@ -37,11 +42,7 @@ class MealCard extends StatelessWidget {
             topLeft: Radius.circular(cardRadius),
             topRight: Radius.circular(cardRadius)
           ),
-          child: Image.network(
-            _mealInfo.imageUrl,
-            width: double.infinity,
-            fit: BoxFit.cover
-          ),
+          child: buildImage()
         ),
         Positioned(
           bottom: 10.px,
@@ -65,6 +66,25 @@ class MealCard extends StatelessWidget {
           ),
         )
       ],
+    );
+  }
+
+  // 获取菜单图片
+  Widget buildImage() {
+    return Image.network(
+      _mealInfo.imageUrl,
+      width: double.infinity,
+      fit: BoxFit.cover,
+      loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+        if (loadingProgress == null) {
+          // 图片加载完成
+          return child;
+        } else {
+          return const Center(
+              child: CircularProgressIndicator()
+          );
+        }
+      },
     );
   }
 

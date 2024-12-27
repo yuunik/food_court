@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:food_court/ui/pages/detail/detail.dart';
 import 'package:food_court/ui/pages/main/main.dart';
 import 'package:food_court/ui/pages/mealList/meal_list.dart';
 
@@ -10,6 +11,7 @@ class AppRouter {
   static final Map<String, WidgetBuilder> routes = {
     MainConfig.routeName: (context) => const MainConfig(),
     MealList.routeName: (context) => const MealList(),
+    MealDetail.routeName: (context) => const MealDetail()
   };
 
   // 生成路由
