@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_court/core/model/meal_model.dart';
+import 'package:food_court/ui/pages/detail/detail_content.dart';
+import 'package:food_court/ui/widgets/chorria_style_app.dart';
 
 class MealDetail extends StatelessWidget {
   static const String routeName = "/mealDetail";
@@ -9,18 +11,9 @@ class MealDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     MealModel mealInfo = ModalRoute.of(context)!.settings.arguments as MealModel;
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("制作流程"),
-        centerTitle: true,
-        backgroundColor: Theme.of(context).colorScheme.primary,
-      ),
-      backgroundColor: Theme.of(context).canvasColor,
-      body: Center(
-        child: Text(
-          mealInfo.title
-        ),
-      ),
+    return ChorriaStyleApp(
+      title: mealInfo.title,
+      child: MealDetailContent(mealInfo)
     );
   }
 }

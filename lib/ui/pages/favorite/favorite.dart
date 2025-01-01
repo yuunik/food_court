@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_court/ui/widgets/chorria_style_app.dart';
 
 class MyFavorite extends StatelessWidget {
   // 路由名称
@@ -8,16 +9,9 @@ class MyFavorite extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("我的收藏"),
-        centerTitle: true,
-        backgroundColor: Theme.of(context).colorScheme.primary,
-      ),
-      backgroundColor: Theme.of(context).canvasColor,
-      body: const Center(
-        child: Text("我的收藏"),
-      ),
+    return ChorriaStyleApp(
+      title: "我的收藏",
+      child: const Text("good")
     );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:food_court/ui/pages/home/home_content.dart';
+import 'package:food_court/ui/widgets/chorria_style_app.dart';
 
 class HomePage extends StatelessWidget {
   // 路由名称
@@ -10,19 +11,9 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: const Text("Food Court"),
-          centerTitle: true,
-          backgroundColor: Theme
-              .of(context)
-              .colorScheme
-              .primary,
-        ),
-        backgroundColor: Theme
-            .of(context)
-            .canvasColor,
-        body: const HomeContent()
+    return ChorriaStyleApp(
+      title: "Food Court",
+      child: const HomeContent(),
     );
   }
 }
