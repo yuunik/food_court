@@ -9,6 +9,9 @@ class AppTheme {
   static const double normalTextSize = 20;
   static const double largeTextSize = 24;
 
+  // 颜色配置
+  static const Color accentColor = Colors.amberAccent;
+
   // 正常模式的主题配置
   static const Color normalColor = Colors.pink;
   static final ThemeData normalTheme = ThemeData(

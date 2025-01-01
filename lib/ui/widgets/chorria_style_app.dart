@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 class ChorriaStyleApp extends StatelessWidget {
   final String title;
   final Widget child;
+  final Widget? floatingActionButton;
 
   ChorriaStyleApp({
     required this.title,
     required this.child,
+    this.floatingActionButton,
     super.key
   });
 
@@ -19,7 +21,8 @@ class ChorriaStyleApp extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.primary,
       ),
       backgroundColor: Theme.of(context).canvasColor,
-      body: child
+      body: child,
+      floatingActionButton: floatingActionButton,
     );
   }
 }

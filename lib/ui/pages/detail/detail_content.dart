@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_court/core/model/meal_model.dart';
 import 'package:food_court/core/extension/int_fit.dart';
+import 'package:food_court/ui/shared/app_theme.dart';
 import 'package:food_court/ui/shared/size_fit.dart';
 
 class MealDetailContent extends StatelessWidget {
@@ -43,7 +44,7 @@ class MealDetailContent extends StatelessWidget {
         physics: const NeverScrollableScrollPhysics(),
         itemCount: _mealInfo.ingredients.length,
         itemBuilder: (context, index) => Card(
-            color: Colors.amberAccent,
+            color: AppTheme.accentColor,
             child: Padding(
               padding: EdgeInsets.all(10.px),
               child: Text(
