@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:food_court/core/model/meal_model.dart';
 import 'package:food_court/core/extension/int_fit.dart';
 import 'package:food_court/ui/shared/app_theme.dart';
-import 'package:food_court/ui/shared/size_fit.dart';
 
 class MealDetailContent extends StatelessWidget {
   final MealModel _mealInfo;
@@ -29,7 +28,8 @@ class MealDetailContent extends StatelessWidget {
 
   // 菜单图片
   Widget buildMenuImage() {
-    return Container(
+    return SizedBox(
+      width: double.infinity,
       child: Image.network(
         _mealInfo.imageUrl
       ),

@@ -22,6 +22,7 @@ class MealModel {
   bool isVegan;
   bool isVegetarian;
   bool isLactoseFree;
+  bool isFavorite;
 
   MealModel({
     required this.id,
@@ -38,6 +39,7 @@ class MealModel {
     required this.isVegan,
     required this.isVegetarian,
     required this.isLactoseFree,
+    required this.isFavorite
   });
 
   factory MealModel.fromJson(Map<String, dynamic> json) => MealModel(
@@ -55,6 +57,7 @@ class MealModel {
     isVegan: json["isVegan"],
     isVegetarian: json["isVegetarian"],
     isLactoseFree: json["isLactoseFree"],
+    isFavorite: json["isFavorite"]
   );
 
   Map<String, dynamic> toJson() => {
@@ -63,6 +66,7 @@ class MealModel {
     "title": title,
     "affordability": affordability,
     "complexity": complexity,
+    "complexityStr": complexityArr[complexity],
     "imageUrl": imageUrl,
     "duration": duration,
     "ingredients": List<dynamic>.from(ingredients.map((x) => x)),
@@ -71,5 +75,40 @@ class MealModel {
     "isVegan": isVegan,
     "isVegetarian": isVegetarian,
     "isLactoseFree": isLactoseFree,
+    "isFavorite": isFavorite
   };
+
+  MealModel copyWith({
+    String? id,
+    List<String>? categories,
+    String? title,
+    int? affordability,
+    int? complexity,
+    String? complexityStr,
+    String? imageUrl,
+    int? duration,
+    List<String>? ingredients,
+    List<String>? steps,
+    bool? isGlutenFree,
+    bool? isVegan,
+    bool? isVegetarian,
+    bool? isLactoseFree,
+    bool? isFavorite
+  }) => MealModel(
+    id: id ?? this.id,
+    categories: categories ?? this.categories,
+    title: title ?? this.title,
+    affordability: affordability ?? this.affordability,
+    complexity: complexity ?? this.complexity,
+    complexityStr: complexityStr ?? this.complexityStr,
+    imageUrl: imageUrl ?? this.imageUrl,
+    duration: duration ?? this.duration,
+    ingredients: ingredients ?? this.ingredients,
+    steps: steps ?? this.steps,
+    isGlutenFree: isGlutenFree ?? this.isGlutenFree,
+    isVegan: isVegan ?? this.isVegan,
+    isVegetarian: isVegetarian ?? this.isVegetarian,
+    isLactoseFree: isLactoseFree ?? this.isLactoseFree,
+    isFavorite: isFavorite ?? this.isFavorite
+  );
 }

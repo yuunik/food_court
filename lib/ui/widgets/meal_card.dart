@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 
 import 'package:food_court/core/model/meal_model.dart';
 import 'package:food_court/core/extension/int_fit.dart';
+import 'package:food_court/core/viewmodel/meal_view_model.dart';
 import 'package:food_court/ui/pages/detail/detail.dart';
 import 'package:food_court/ui/widgets/meal_operation_item.dart';
+import 'package:provider/provider.dart';
 
 final cardRadius = 12.px;
 
@@ -99,24 +101,39 @@ class MealCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           MealOperationItem(
-            const Icon(
+            icon: const Icon(
               Icons.schedule,
             ),
-            "${_mealInfo.duration} 分钟"
+            title: "${_mealInfo.duration} 分钟"
           ),
           MealOperationItem(
-            const Icon(
+            icon: const Icon(
               Icons.restaurant
             ),
-            "${_mealInfo.complexityStr}"
+            title: "${_mealInfo.complexityStr}"
           ),
-          const MealOperationItem(
-            Icon(
-              Icons.favorite
-            ),
-            "已收藏"
-          )
+          buildFavoriteItem()
         ],
+      ),
+    );
+  }
+  
+  // 是否收藏
+  Widget buildFavoriteItem() {
+    final isFavorite = _mealInfo.isFavorite;
+
+    return Consumer<MealViewModel>(
+      builder: (context, mealViewModel, child) {
+        return GestureDetector(
+          onTap: () {
+            mealViewModel.handleFavorite(_mealInfo);
+          },
+          child: child,
+        );
+      },
+      child: MealOperationItem(
+          icon: isFavorite ? const Icon(Icons.favorite, color: Colors.redAccent) : const Icon(Icons.favorite_border),
+          title: isFavorite ? "已收藏" : "收藏",
       ),
     );
   }

@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 
 class MealOperationItem extends StatelessWidget {
   // 图标
-  final Widget operationIcon;
+  final Widget icon;
   // 标题
   final String title;
 
-  const MealOperationItem(this.operationIcon, this.title, {super.key});
+  const MealOperationItem({required this.icon, required this.title, super.key});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        operationIcon,
+        icon,
         const SizedBox(
           width: 3,
         ),

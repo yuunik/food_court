@@ -31,7 +31,8 @@
       "isGlutenFree": false,
       "isVegan": true,
       "isVegetarian": true,
-      "isLactoseFree": true
+      "isLactoseFree": true,
+      "isFavorite": false
     },
     {
       "id": "m2",
@@ -58,7 +59,8 @@
       "isGlutenFree": false,
       "isVegan": false,
       "isVegetarian": false,
-      "isLactoseFree": false
+      "isLactoseFree": false,
+      "isFavorite": false
     },
     {
       "id": "m3",
@@ -89,7 +91,8 @@
       "isGlutenFree": false,
       "isVegan": false,
       "isVegetarian": false,
-      "isLactoseFree": true
+      "isLactoseFree": true,
+      "isFavorite": false
     },
     {
       "id": "m4",
@@ -123,7 +126,8 @@
       "isGlutenFree": false,
       "isVegan": false,
       "isVegetarian": false,
-      "isLactoseFree": false
+      "isLactoseFree": false,
+      "isFavorite": false
     },
     {
       "id": "m5",
@@ -158,7 +162,8 @@
       "isGlutenFree": true,
       "isVegan": false,
       "isVegetarian": true,
-      "isLactoseFree": true
+      "isLactoseFree": true,
+      "isFavorite": false
     },
     {
       "id": "m6",
@@ -193,7 +198,8 @@
       "isGlutenFree": true,
       "isVegan": false,
       "isVegetarian": true,
-      "isLactoseFree": false
+      "isLactoseFree": false,
+      "isFavorite": false
     },
     {
       "id": "m7",
@@ -223,7 +229,8 @@
       "isGlutenFree": true,
       "isVegan": false,
       "isVegetarian": true,
-      "isLactoseFree": false
+      "isLactoseFree": false,
+      "isFavorite": false
     },
     {
       "id": "m8",
@@ -255,7 +262,8 @@
       "isGlutenFree": true,
       "isVegan": false,
       "isVegetarian": false,
-      "isLactoseFree": true
+      "isLactoseFree": true,
+      "isFavorite": false
     },
     {
       "id": "m9",
@@ -303,7 +311,8 @@
       "isGlutenFree": true,
       "isVegan": false,
       "isVegetarian": true,
-      "isLactoseFree": false
+      "isLactoseFree": false,
+      "isFavorite": false
     },
     {
       "id": "m10",
@@ -336,7 +345,8 @@
       "isGlutenFree": true,
       "isVegan": true,
       "isVegetarian": true,
-      "isLactoseFree": true
+      "isLactoseFree": true,
+      "isFavorite": false
     }
   ]
 }

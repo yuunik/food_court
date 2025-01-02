@@ -15,5 +15,14 @@ class MealViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
+  handleFavorite(MealModel meal) {
+    final mealIndex = _mealList.indexWhere((item) => item.id == meal.id);
+    if (mealIndex != -1) {
+      _mealList[mealIndex] = meal.copyWith(isFavorite: !meal.isFavorite);
+      // 通知监听者
+      notifyListeners();
+    }
+  }
+
   List<MealModel> get mealList => _mealList;
 }
