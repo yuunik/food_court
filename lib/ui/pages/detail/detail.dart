@@ -16,9 +16,7 @@ class MealDetail extends StatelessWidget {
     String mealId = (ModalRoute.of(context)!.settings.arguments as MealModel).id;
     // 获取 mealViewModel
     final MealViewModel mealViewModel = Provider.of<MealViewModel>(context);
-    final MealModel mealInfo = mealViewModel.mealList.firstWhere(
-      (meal) => meal.id == mealId,
-    );
+    final MealModel mealInfo = mealViewModel.mealList.where((meal) => meal.id == mealId).single;
     return ChorriaStyleApp(
       title: mealInfo.title,
       floatingActionButton: Consumer<MealViewModel>(
@@ -28,9 +26,10 @@ class MealDetail extends StatelessWidget {
               mealViewModel.handleFavorite(mealInfo)
             },
             backgroundColor: AppTheme.accentColor,
-            child: mealInfo.isFavorite ? const Icon(Icons.favorite, color: Colors.redAccent) : const Icon(Icons.favorite_border)
+            child: child
           );
         },
+        child: mealInfo.isFavorite ? const Icon(Icons.favorite, color: Colors.redAccent) : const Icon(Icons.favorite_border),
       ),
       child: MealDetailContent(mealInfo),
     );

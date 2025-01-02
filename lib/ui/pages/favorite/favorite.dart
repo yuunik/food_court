@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_court/ui/pages/favorite/favorite_content.dart';
 import 'package:food_court/ui/widgets/chorria_style_app.dart';
 
 class MyFavorite extends StatelessWidget {
@@ -11,7 +12,7 @@ class MyFavorite extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChorriaStyleApp(
       title: "我的收藏",
-      child: const Text("good")
+      child: const FavoriteContent()
     );
   }
 }
