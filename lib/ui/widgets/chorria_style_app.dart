@@ -4,11 +4,14 @@ class ChorriaStyleApp extends StatelessWidget {
   final String title;
   final Widget child;
   final Widget? floatingActionButton;
+  // 侧边栏
+  final Widget? drawer;
 
   ChorriaStyleApp({
     required this.title,
     required this.child,
     this.floatingActionButton,
+    this.drawer,
     super.key
   });
 
@@ -23,6 +26,7 @@ class ChorriaStyleApp extends StatelessWidget {
       backgroundColor: Theme.of(context).canvasColor,
       body: child,
       floatingActionButton: floatingActionButton,
+      drawer: drawer,
     );
   }
 }
