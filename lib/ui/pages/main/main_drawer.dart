@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_court/ui/pages/filter/filter.dart';
 import 'package:food_court/ui/shared/size_fit.dart';
 
 class MainDrawer extends StatelessWidget {
@@ -25,6 +26,8 @@ class MainDrawer extends StatelessWidget {
             title: "过滤",
             handleTap: () {
               Navigator.of(context).pop();
+              // 进入二级路由过滤页
+              Navigator.of(context).pushNamed(FilterPage.routeName);
             }
           )
         ],
