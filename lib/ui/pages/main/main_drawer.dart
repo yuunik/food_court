@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:food_court/ui/shared/size_fit.dart';
 
-class HomeDrawer extends StatelessWidget {
-  const HomeDrawer({super.key});
+class MainDrawer extends StatelessWidget {
+  const MainDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {

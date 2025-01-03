@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_court/ui/pages/main/main_drawer.dart';
 import 'package:food_court/ui/pages/main/initalize_items.dart';
 import 'package:food_court/ui/shared/app_theme.dart';
 
@@ -18,6 +19,7 @@ class _MainConfigState extends State<MainConfig> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const MainDrawer(),
       body: IndexedStack(
         index: _currentIndex,
         children: pageList,
