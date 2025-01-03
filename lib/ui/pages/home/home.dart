@@ -12,11 +12,9 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChorriaStyleApp(
-      title: "Food Court",
+      title: "美食广场",
       appBarLeading: IconButton(
         onPressed: () => {
-          print("测试 ------ "),
-          print(context),
           Scaffold.of(context).openDrawer()
         },
         icon: const Icon(Icons.menu),

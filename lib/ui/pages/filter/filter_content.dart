@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_court/core/extension/int_fit.dart';
+import 'package:food_court/core/viewmodel/filter_view_model.dart';
+import 'package:provider/provider.dart';
 
 class FilterContent extends StatelessWidget {
   const FilterContent({super.key});
@@ -9,7 +11,7 @@ class FilterContent extends StatelessWidget {
     return Column(
       children: [
         buildSelectionTip(context),
-        buildSelectOption()
+        buildChoiceOption()
       ],
     );
   }
@@ -32,28 +34,52 @@ class FilterContent extends StatelessWidget {
   }
 
   // 选项
-  Widget buildSelectOption() {
-    return ListView(
-      shrinkWrap: true,
-      padding: EdgeInsets.zero,
-      children: [
-        buildSelectTile("无谷蛋白"),
-        buildSelectTile("不含乳糖"),
-        buildSelectTile("普通素食者"),
-        buildSelectTile("严格素食者"),
-      ],
+  Widget buildChoiceOption() {
+    return Consumer<FilterViewModel>(
+      builder: (context, filterViewModel, child) => Expanded(
+        child: ListView(
+          children: [
+            buildSelectionTile(
+              title: "无谷蛋白",
+              isChecked: filterViewModel.isGlutenFree,
+              onChanged: (value) {
+                filterViewModel.isGlutenFree = value;
+              }
+            ),
+            buildSelectionTile(
+              title: "不含乳糖",
+              isChecked: filterViewModel.isLactoseFree,
+              onChanged: (value) {
+                filterViewModel.isLactoseFree = value;
+              }
+            ),
+            buildSelectionTile(
+              title: "普通素食者",
+              isChecked: filterViewModel.isVegetarian,
+              onChanged: (value) {
+                filterViewModel.isVegetarian = value;
+              }
+            ),
+            buildSelectionTile(
+              title: "严格素食者",
+              isChecked: filterViewModel.isVegan,
+              onChanged: (value) {
+                filterViewModel.isVegan = value;
+              }
+            )
+          ],
+        ),
+      ),
     );
   }
 
-  Widget buildSelectTile(String content) {
+  Widget buildSelectionTile({required String title, required bool isChecked, required ValueChanged onChanged}) {
     return ListTile(
-      title: Text(content),
-      subtitle: Text("展示$content相关食物"),
+      title: Text(title),
+      subtitle: Text("展示$title相关食物"),
       trailing: Switch(
-        value: false,
-        onChanged: (value) {
-          print(value);
-        },
+        value: isChecked,
+        onChanged: onChanged
       ),
     );
   }

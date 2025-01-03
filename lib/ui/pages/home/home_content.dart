@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tdesign_flutter/tdesign_flutter.dart';
 
 import 'package:food_court/core/extension/double_fit.dart';
 import 'package:food_court/core/extension/int_fit.dart';
@@ -44,6 +45,12 @@ class HomeContent extends StatelessWidget {
               );
             }
             final categoryList = snapshot.data!;
+            if (categoryList.isEmpty) {
+              return const TDEmpty(
+                type: TDEmptyType.plain,
+                emptyText: "暂无数据",
+              );
+            }
             return GridView.builder(
               padding: EdgeInsets.all(20.0.px),
               itemCount: categoryList.length,
